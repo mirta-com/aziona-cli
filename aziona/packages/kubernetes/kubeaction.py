@@ -156,7 +156,7 @@ def load(args) -> None:
                 "This release image is alread running in the current production"
             )
 
-        for (key, value) in args.kustomize_image.items():
+        for key, value in args.kustomize_image.items():
             functions.kustomize(name=key, image=value)
 
         if args.manifest_yaml:

@@ -14,8 +14,8 @@ DEPS_TERRAFORM = {
     "linux": LooseVersion("1.1.0"),
     "osx": LooseVersion("1.1"),
 }  # TODO update to 1.0.0
-DEPS_KUBECTL = LooseVersion("1.21.3")
-DEPS_EKSCTL = LooseVersion("0.60.0")
+DEPS_KUBECTL = LooseVersion("1.23.16")
+DEPS_EKSCTL = LooseVersion("0.129.0")
 DEPS_KUSTOMIZE = LooseVersion("4.0.5")
 
 
@@ -70,7 +70,7 @@ mv ./kubectl /usr/local/bin/kubectl
         scripts[
             "eksctl"
         ] = f"""
-curl --location https://github.com/weaveworks/eksctl/releases/download/{DEPS_EKSCTL}/eksctl_Linux_amd64.tar.gz | tar xz -C /tmp
+curl --location https://github.com/weaveworks/eksctl/releases/download/v{DEPS_EKSCTL}/eksctl_Linux_amd64.tar.gz | tar xz -C /tmp
 mv /tmp/eksctl /usr/local/bin
 """
         scripts[
@@ -111,7 +111,7 @@ mv ./kubectl /usr/local/bin/kubectl
         scripts[
             "eksctl"
         ] = f"""
-curl --location https://github.com/weaveworks/eksctl/releases/download/{DEPS_EKSCTL}/eksctl_Linux_amd64.tar.gz | tar xz -C /tmp
+curl --location https://github.com/weaveworks/eksctl/releases/download/v{DEPS_EKSCTL}/eksctl_Linux_amd64.tar.gz | tar xz -C /tmp
 mv /tmp/eksctl /usr/local/bin
 """
         scripts[

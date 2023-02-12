@@ -121,7 +121,7 @@ def interpolation_vars(values, from_dict={}):
 
     def _dict(data):
         res = {}
-        for (key, value) in data.items():
+        for key, value in data.items():
             res[key] = _make_interpolation_str(value, **res)
         return res
 
