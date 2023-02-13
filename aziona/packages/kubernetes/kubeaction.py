@@ -111,6 +111,8 @@ def kubeaction_exec(action: str, filename: str, action_args: str = []):
                 " ".join([arg for arg in action_args]),
             )
             io.debug(cmd)
+            commands.exec("aws sts get-caller-identity")
+            commands.exec("kubectl version")
             commands.exec(cmd)
     finally:
         manifests.close()
